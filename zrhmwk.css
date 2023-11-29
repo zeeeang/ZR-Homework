@@ -29,3 +29,8 @@ th, td {
 th {
     background-color: #C0C0C0;
 }
+
+#gifContainer {
+    margin-top: 20px; 
+    text-align: center;
+  }
