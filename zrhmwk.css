@@ -11,6 +11,10 @@ button {
     margin-top: 10px;
 }
 
+button:hover {
+    background-color: #f8040c; 
+}
+
 table {
     width: 100%;
     border-collapse:collapse;
@@ -24,6 +28,10 @@ th, td {
     padding: 10px;
     text-align: left;
     color: #000;
+}
+
+label, input, select {
+    margin-bottom: 10px;
 }
 
 th {

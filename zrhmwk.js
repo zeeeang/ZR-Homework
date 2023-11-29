@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     var divisionNames = {
-        'Workforce Development': ['Seok Hieng', 'Stephanie', 'Laureen'],
-        'Smart City': ['Guoming', 'Eng Hwee', "Shanny"],
-        'Human Capital': ['Wee Teng','Christine'],
+        'Workforce Development': ['Angela', 'Jerlene', 'Joanna', 'Kyi Yeung', 'Laureen', 'Mandon', 'Ruzanna', 'Seok Hieng', 'Stephanie', 'Ya Wen'],
+        'Smart City': ['Bernard', 'Dexter', 'Eng Hwee', 'Grace', 'Guoming', 'Jun Jie', 'Preshant', 'Sean', 'Shaun', "Shanny", 'Terence', 'Victoria', 'Yi Han'],
+        'Human Capital': ['Christine', 'Karolyn', 'Sharanyaa', 'Shirley', 'Shu Min', 'Si Qi', 'Tingting', 'Wee Teng'],
         'Finance': ['Cher Maine', 'Keith', 'Chole', 'Christine', 'Sok Hwai'],
         'Office Admin': ['Dexun'],
         'Others': []
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var divisionSelection = document.getElementById('divisionSelection');
     var officerSelection = document.getElementById('officerSelection');
     var otherOfficersName = document.getElementById('otherOfficersName');
+    var remarks = document.getElementById('remarks');
     
     //function to populate dropdown lists
     function populateDropdown(dropdown, options) {
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var dateSent = document.getElementById('dateSent').value;
         var timeSent = document.getElementById('timeSent').value;
         var clearBy = document.getElementById('dateToBeCleared').value;
+        var remarks = document.getElementById('remarks').value;
 
         if (division === "Others"){
             sentBy = otherSentBy;
@@ -42,13 +44,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         //call to store the new homework input in local storage
-        storeHomeWorkData(emailSubject, sentBy, otherSentBy, dateSent, timeSent, clearBy);
+        storeHomeWorkData(emailSubject, sentBy, otherSentBy, dateSent, timeSent, clearBy, remarks);
 
         location.reload();
     }
 
     //function to store homework data in local storage
-    function storeHomeWorkData(emailSubject, sentBy, otherSentBy, dateSent, timeSent, clearBy){
+    function storeHomeWorkData(emailSubject, sentBy, otherSentBy, dateSent, timeSent, clearBy, remarks){
         var existingData = getHomeWorkData();
 
         existingData.unshift({
@@ -56,7 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
             sentBy: sentBy || otherSentBy || "",
             dateSent: dateSent,
             timeSent: timeSent,
-            clearBy: clearBy
+            clearBy: clearBy,
+            remarks: remarks,
         });
 
         localStorage.setItem('homeworkData', JSON.stringify(existingData));
@@ -110,9 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 newRow.insertCell(2).textContent = data.dateSent;
                 newRow.insertCell(3).textContent = data.timeSent;
                 newRow.insertCell(4).textContent = data.clearBy;
+                newRow.insertCell(5).textContent = data.remarks;
     
                 // Add a delete button
-                var deleteCell = newRow.insertCell(5);
+                var deleteCell = newRow.insertCell(6);
                 var deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Delete';
                 deleteButton.onclick = function() {
