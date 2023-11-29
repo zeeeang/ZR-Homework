@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var divisionSelection = document.getElementById('divisionSelection');
     var officerSelection = document.getElementById('officerSelection');
     var otherOfficersName = document.getElementById('otherOfficersName');
-    var remarks = document.getElementById('remarks');
-    
+        
     //function to populate dropdown lists
     function populateDropdown(dropdown, options) {
         dropdown.innerHTML = "";
@@ -153,7 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
         restoreHomeWork()
 
     } else {
-        // Do nothing
         console.log("No local Storage!");
     }
 });
