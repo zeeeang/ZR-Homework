@@ -1,0 +1,54 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ZR Homework List</title>
+        <link rel="stylesheet" href="zrhmwk.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>ZR Homework List</h1>
+            <div id="inputForm">
+                <label for="divisionSelection">Indicate Division</label>
+                <select id="divisionSelection" name="division">
+                    <option value="Workforce Development">Workforce Development</option>
+                    <option value="Smart City">Smart City</option>
+                    <option value="Human Capital">Human Capital</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Office Admin">Office Admin</option>
+                    <option value="Others">Others</option>
+                </select>
+                <br/>
+                <label for="officerSelection">Indicate Name</label>
+                <select id="officerSelection" name="officer"></select>
+                <input type="text" id="otherOfficersName" name="otherOfficersName" style="display: none" placeholder="Enter Name">
+                <br/>
+                <label for="emailSubject">Indicate Email Subject</label>
+                <input type="text" id="emailSubject" name="emailSubject" required>
+                <br/>
+                <label for="dateSent">Indicate Date Email was Sent</label>
+                <input type="date" id="dateSent" name="dateSent" required>
+                <br/>
+                <label for="timeSent">Indicate Time Email was Sent</label>
+                <input type="time" id="timeSent" name="timeSent" required>
+                <br/>
+                <label for="dateToBeCleared">Indicate Date Email is to be Cleared By</label>
+                <input type="date" id="dateToBeCleared" name="dateToBeCleared" required>
+                <br/>
+                <button id="addHomeworkBtn">Add Homework</button>
+            </div>
+            <table id="homeworkTable">
+                <thead>
+                    <tr>
+                        <th>Email Subject</th>
+                        <th>Sent By</th>
+                        <th>Date Sent</th>
+                        <th>Time Sent</th>
+                        <th>Clear By</th>
+                    </tr>
+                </thead>
+                <tbody id="homeworkTableBody"></tbody>
+            </table>
+        </div>
+        <script src="zrhmwk.js"></script>
+    </body>
+</html>
